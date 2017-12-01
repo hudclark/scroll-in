@@ -1,0 +1,19 @@
+{
+  "name": "scroll-in",
+  "version": "1.0.0",
+  "description": "Animate elements into the page as they are scrolled into view.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "uglifyjs scroll-in.js -o scroll-in.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hudclark/scroll-in.git"
+  },
+  "author": "Hudson Clark",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hudclark/scroll-in/issues"
+  },
+  "homepage": "https://github.com/hudclark/scroll-in#readme"
+}
