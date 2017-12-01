@@ -56,9 +56,9 @@
         const transitionValue = (start) ?  movementAmount: 0
         let transform = null
         if (animation === 'slide-right') {
-            transform = `translateX(${transitionValue})`
-        } else if (animation === 'slide-left') {
             transform = `translateX(-${transitionValue})`
+        } else if (animation === 'slide-left') {
+            transform = `translateX(${transitionValue})`
         } else {
             transform = `translateY(${transitionValue})`
         } 
