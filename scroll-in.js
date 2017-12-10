@@ -1,5 +1,7 @@
 (function ($) {
 
+    let scrollInterval = null
+
     $.fn.scrollIn = function (options) {
         options = options || {}
         const percentageVisible = options.percentageVisible || (1/7)
@@ -34,19 +36,27 @@
             })
         }
 
-        const scrollInterval = setInterval(() => {
+        setInterval(() => {
             if (!didScroll) return
             didScroll = false
             animateElementsIn()
             if (elements.length === 0) {
-                $window.off('scroll.scrollIn')
-                clearInterval(scrollInterval)
+                removeScrollListeners()
             }
         }, 100)
 
         // animate any current elements in
         animateElementsIn()
 
+    }
+
+    $.fn.stopScrollIn = function () {
+        removeScrollListeners()
+    }
+
+    function removeScrollListeners () {
+        $(window).off('scroll.scrollIn')
+        clearInterval(scrollInterval)
     }
 
     function getAnimationCss (element, start) {
